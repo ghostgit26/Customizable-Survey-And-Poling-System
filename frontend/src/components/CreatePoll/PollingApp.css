@@ -1,0 +1,15 @@
+.polling-app-container {
+  min-height: calc(100vh - 120px);
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+}
+
+.polling-app-content {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@media (max-width: 768px) {
+  .polling-app-container {
+    padding: 1.5rem 0;
+  }
+}
