@@ -66,6 +66,18 @@ const Dashboard = () => {
   const [disagreeMsg, setDisagreeMsg] = useState("");
   const navigate = useNavigate();
 
+  // Function to get time-based greeting
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) {
+      return "Good Morning";
+    } else if (hour < 17) {
+      return "Good Afternoon";
+    } else {
+      return "Good Evening";
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -141,7 +153,9 @@ const Dashboard = () => {
       <div className="container">
         {/* Welcome Section */}
         <div className="dashboard-welcome">
-          <h2>Welcome back, {user?.name}! 👋</h2>
+          <h2>
+            {getGreeting()}, {user?.name}! 👋
+          </h2>
           <p>
             Here's an overview of your surveys and polls. Create new ones or
             manage existing ones.
